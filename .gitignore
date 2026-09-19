@@ -1,0 +1,12 @@
+# Local credentials and working data
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.log
+work/
+__pycache__/
+mysql-test/
+.DS_Store
+Thumbs.db
