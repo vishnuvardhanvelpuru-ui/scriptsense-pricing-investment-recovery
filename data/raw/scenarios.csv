@@ -1,0 +1,5 @@
+scenario_id,scenario_name,adoption_rate,retention_rate
+1,Current,0,1
+2,Conservative,0.50,0.98
+3,Base,1,0.95
+4,Upside,1,1

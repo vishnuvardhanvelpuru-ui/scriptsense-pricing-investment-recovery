@@ -1,0 +1,4 @@
+tier_id,tier_name,list_monthly_inr,proposed_increase,included_script_runs,overage_per_run_inr
+1,Core,12000,0.08,25,200
+2,Growth,25000,0.10,80,150
+3,Enterprise,50000,0.12,250,100
