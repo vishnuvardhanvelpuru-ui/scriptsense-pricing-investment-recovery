@@ -1,0 +1,52 @@
+-- Same records as the raw CSV files. Choose this OR the CSV import.
+USE scriptsense_strategy;
+START TRANSACTION;
+INSERT INTO tiers (tier_id,tier_name,list_monthly_inr,proposed_increase,included_script_runs,overage_per_run_inr) VALUES
+(1,'Core',12000,0.08,25,200),
+(2,'Growth',25000,0.10,80,150),
+(3,'Enterprise',50000,0.12,250,100);
+INSERT INTO assumptions (assumption_id,initial_investment_inr,fixed_monthly_cost_inr,target_payback_months,review_margin) VALUES
+(1,25000000,500000,60,0.50);
+INSERT INTO scenarios (scenario_id,scenario_name,adoption_rate,retention_rate) VALUES
+(1,'Current',0,1),
+(2,'Conservative',0.50,0.98),
+(3,'Base',1,0.95),
+(4,'Upside',1,1);
+INSERT INTO customers (customer_id,customer_name,segment,tier_id,snapshot_date,monthly_script_runs,contracted_monthly_inr,hosting_monthly_inr,support_hours_monthly,support_hourly_cost_inr) VALUES
+('C001','Simulated Studio 01','Independent Studios',1,'2026-08-31',15,12000.00,1500,2,500),
+('C002','Simulated Studio 02','Independent Studios',1,'2026-08-31',18,11400.00,1600,4,500),
+('C003','Simulated Studio 03','Independent Studios',1,'2026-08-31',20,10800.00,1700,6,500),
+('C004','Simulated Studio 04','Independent Studios',1,'2026-08-31',22,9600.00,1800,8,500),
+('C005','Simulated Studio 05','Independent Studios',1,'2026-08-31',24,12000.00,1900,2,500),
+('C006','Simulated Studio 06','Independent Studios',1,'2026-08-31',25,11400.00,2000,4,500),
+('C007','Simulated Studio 07','Production Houses',1,'2026-08-31',27,10800.00,2100,6,500),
+('C008','Simulated Studio 08','Production Houses',1,'2026-08-31',28,9600.00,2200,8,500),
+('C009','Simulated Studio 09','Production Houses',1,'2026-08-31',30,12000.00,2300,2,500),
+('C010','Simulated Studio 10','Production Houses',1,'2026-08-31',32,11400.00,2400,4,500),
+('C011','Simulated Studio 11','Streaming Studios',1,'2026-08-31',35,10800.00,2500,6,500),
+('C012','Simulated Studio 12','Streaming Studios',1,'2026-08-31',40,9600.00,2600,24,500),
+('C013','Simulated Studio 13','Independent Studios',2,'2026-08-31',45,25000.00,3500,4,500),
+('C014','Simulated Studio 14','Independent Studios',2,'2026-08-31',50,23750.00,3600,6,500),
+('C015','Simulated Studio 15','Independent Studios',2,'2026-08-31',55,22500.00,3700,8,500),
+('C016','Simulated Studio 16','Production Houses',2,'2026-08-31',60,20000.00,3800,10,500),
+('C017','Simulated Studio 17','Production Houses',2,'2026-08-31',65,25000.00,3900,4,500),
+('C018','Simulated Studio 18','Production Houses',2,'2026-08-31',70,23750.00,4000,6,500),
+('C019','Simulated Studio 19','Production Houses',2,'2026-08-31',75,22500.00,4100,8,500),
+('C020','Simulated Studio 20','Production Houses',2,'2026-08-31',80,20000.00,4200,10,500),
+('C021','Simulated Studio 21','Production Houses',2,'2026-08-31',85,25000.00,4300,4,500),
+('C022','Simulated Studio 22','Streaming Studios',2,'2026-08-31',90,23750.00,4400,6,500),
+('C023','Simulated Studio 23','Streaming Studios',2,'2026-08-31',100,22500.00,4500,8,500),
+('C024','Simulated Studio 24','Streaming Studios',2,'2026-08-31',110,20000.00,4600,30,500),
+('C025','Simulated Studio 25','Independent Studios',3,'2026-08-31',140,50000.00,8000,8,500),
+('C026','Simulated Studio 26','Independent Studios',3,'2026-08-31',150,47500.00,8100,10,500),
+('C027','Simulated Studio 27','Production Houses',3,'2026-08-31',160,45000.00,8200,12,500),
+('C028','Simulated Studio 28','Production Houses',3,'2026-08-31',170,40000.00,8300,14,500),
+('C029','Simulated Studio 29','Production Houses',3,'2026-08-31',180,50000.00,8400,8,500),
+('C030','Simulated Studio 30','Production Houses',3,'2026-08-31',190,47500.00,8500,10,500),
+('C031','Simulated Studio 31','Streaming Studios',3,'2026-08-31',200,45000.00,8600,12,500),
+('C032','Simulated Studio 32','Streaming Studios',3,'2026-08-31',210,40000.00,8700,14,500),
+('C033','Simulated Studio 33','Streaming Studios',3,'2026-08-31',230,50000.00,8800,8,500),
+('C034','Simulated Studio 34','Streaming Studios',3,'2026-08-31',250,47500.00,8900,10,500),
+('C035','Simulated Studio 35','Streaming Studios',3,'2026-08-31',270,45000.00,9000,12,500),
+('C036','Simulated Studio 36','Streaming Studios',3,'2026-08-31',300,40000.00,9100,42,500);
+COMMIT;
